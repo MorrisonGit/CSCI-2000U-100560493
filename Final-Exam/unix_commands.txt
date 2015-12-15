@@ -4,7 +4,7 @@
 # except the two header lines?
 # Enter the relevant Unix command(s) used below.
 
-
+tail -n +3 classlist.csv | cat
 
 
 # part (b)
@@ -13,7 +13,9 @@
 # Enter the relevant Unix command(s) used below as well as the number
 # of students in the list.
 
+tail -n +k classlist.csv | wc -l
 
+# of students = 130
 
 
 # part (c)
@@ -24,7 +26,11 @@
 # Enter the relevant Unix command(s) used below as well as the names
 # of the first and last students in the new list.
 
+tail -n +3 classlist.csv | sort -h -2
 
+The students:
+Top: Adam
+Bottom: Zenia
 
 
 # part (d)
@@ -33,7 +39,9 @@
 # repeated in the class list?
 # Enter the relevant name(s) and the Unix command(s) below.
 
+uniq -d classlist.csv
 
+Jacqueline and Diego are repeated first names.
 
 
 # part (f) [BONUS]
@@ -41,3 +49,5 @@
 # the student number and the first character of the first name to make
 # a four-character identifier for each student.
 # Enter the relevant Unix command(s) used below.
+
+cat `tail -n +3` > shortform.txt
